@@ -99,7 +99,7 @@ public class LatitudeStock {
 		}
 		
 		// check if the stocks array contains negative prices
-	    if(Arrays.stream(stocks).anyMatch(i -> i < 0)) {
+		if(Arrays.stream(stocks).anyMatch(i -> i < 0)) {
 	    	
 	    	LOGGER.log(Level.SEVERE,"Stocks array contains negative price(s)");
 	    	
