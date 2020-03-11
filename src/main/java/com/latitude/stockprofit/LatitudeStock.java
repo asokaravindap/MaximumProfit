@@ -7,6 +7,7 @@ import com.latitude.stockprofit.exception.EmptyArrayException;
 import com.latitude.stockprofit.exception.NegativeElementInArrayException;
 import com.latitude.stockprofit.exception.NoProfitException;
 import com.latitude.stockprofit.exception.NotSufficientElementsException;
+import com.latitude.stockprofit.util.Constants;
 
 /**
  * 
@@ -59,8 +60,9 @@ public class LatitudeStock {
 		if(maxProfit == Integer.MIN_VALUE) {
 			
 			LOGGER.log(Level.SEVERE,"A profit cannot be calculated from the given stocks array");
+			
 			// throw NoProfitException
-			throw new NoProfitException("A profit cannot be found for the given stocks array");
+			throw new NoProfitException(Constants.NOPROFITEXCEPTION_MESSAGE);
 		}
 		
 		LOGGER.info("Maximum Profit : " + maxProfit);
@@ -82,24 +84,27 @@ public class LatitudeStock {
 		if((null == stocks) || (stocks.length == 0)) {
 			
 			LOGGER.log(Level.SEVERE,"Stocks array is null or empty");
+			
 			//throw EmptyArrayException
-			throw new EmptyArrayException("stocks array is empty");
+			throw new EmptyArrayException(Constants.EMPTYARRAYEXCEPTION_MESSAGE);
 		}
 		
 		// check if the stocks array doesn't have sufficient elements
 		if((stocks.length < 2)) {
 	 
 			LOGGER.log(Level.SEVERE,"Stocks array doesn't have sufficient elements");
+			
 			//throw NotSufficientElementsException 
-			throw new NotSufficientElementsException("stocks array do not have sufficient elements");
+			throw new NotSufficientElementsException(Constants.NOTSUFFICIENTELEMENTSEXCEPTION_MESSAGE);
 		}
 		
 		// check if the stocks array contains negative prices
 	    if(Arrays.stream(stocks).anyMatch(i -> i < 0)) {
 	    	
 	    	LOGGER.log(Level.SEVERE,"Stocks array contains negative price(s)");
+	    	
 	    	//throw NegativeElementInArrayException
-	    	throw new NegativeElementInArrayException("stocks array has a negative price");
+	    	throw new NegativeElementInArrayException(Constants.NEGATIVEELEMENTINARRAYEXCEPTION_MESSAGE);
 	    }		
 	}
 	
