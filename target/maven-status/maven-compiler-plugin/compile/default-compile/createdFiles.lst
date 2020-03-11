@@ -1,0 +1,6 @@
+com\latitude\stockprofit\Main.class
+com\latitude\stockprofit\exception\NoProfitException.class
+com\latitude\stockprofit\exception\EmptyArrayException.class
+com\latitude\stockprofit\exception\NegativeElementInArrayException.class
+com\latitude\stockprofit\exception\NotSufficientElementsException.class
+com\latitude\stockprofit\LatitudeStock.class
